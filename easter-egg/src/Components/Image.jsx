@@ -1,14 +1,22 @@
 import React from "react";
-import { Card, Col } from "reactstrap";
+import { Card, Col, CardImg } from "reactstrap";
 
 class Image extends React.Component {
+  handleClick() {
+    this.props.handleClick();
+  }
+
   render() {
     return (
-      <Card>
-        <Col xs="6" md="3" xl="2">
-          <img src={this.props.srcUrl} alt="Card cap" fluid />
-        </Col>
-      </Card>
+      <Col xs="6" md="3" xl="2">
+        <Card
+          onClick={() => {
+            this.props.handleClick();
+          }}
+        >
+          <CardImg top width="100%" src={this.props.srcUrl} alt="Card cap" />
+        </Card>
+      </Col>
     );
   }
 }

@@ -15,9 +15,13 @@ class Gallery extends React.Component {
     axios
       .get("http://easteregg.wildcodeschool.fr/api/characters")
       .then(resultat => {
-        console.log(resultat.data);
+        // console.log(resultat.data);
         this.setState({ characterList: resultat.data });
       });
+  }
+
+  handleClick() {
+    console.log("Youpi");
   }
 
   render() {
@@ -25,7 +29,14 @@ class Gallery extends React.Component {
       <Container>
         <Row>
           {this.state.characterList.map((character, i) => {
-            return <Image key={i} srcUrl={character.image} />;
+            return (
+              <Image
+                key={i}
+                srcUrl={character.image}
+                handleClick={this.handleClick}
+                skills={character.skills}
+              />
+            );
           })}
         </Row>
       </Container>
