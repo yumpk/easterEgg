@@ -15,7 +15,6 @@ class Gallery extends React.Component {
     axios
       .get("http://easteregg.wildcodeschool.fr/api/characters")
       .then(resultat => {
-        console.log(resultat.data);
         this.setState({ characterList: resultat.data });
       });
   }
@@ -25,7 +24,7 @@ class Gallery extends React.Component {
       <Container>
         <Row>
           {this.state.characterList.map((character, i) => {
-            return <Image key={i} srcUrl={character.image} />;
+            return <Image key={i} character={character} />;
           })}
         </Row>
       </Container>
