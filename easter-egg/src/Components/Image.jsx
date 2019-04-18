@@ -2,19 +2,19 @@ import React from "react";
 import { Card, Col, CardImg } from "reactstrap";
 
 class Image extends React.Component {
-  handleClick() {
-    this.props.handleClick();
+  storeSelected() {
+    localStorage.setItem("charac", JSON.stringify(this.props.character));
   }
 
   render() {
     return (
-      <Col xs="6" md="3" xl="2">
+      <Col xs="6" md="3" lg="2">
         <Card
           onClick={() => {
-            this.props.handleClick();
+            this.storeSelected();
           }}
         >
-          <CardImg top width="100%" src={this.props.srcUrl} alt="Card cap" />
+          <CardImg top src={this.props.character.image} alt="Card cap" />
         </Card>
       </Col>
     );
