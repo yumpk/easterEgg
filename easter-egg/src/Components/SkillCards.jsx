@@ -1,8 +1,31 @@
 import React from "react";
-import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button} from 'reactstrap';
+import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
+
+//const currentCharacters = JSON.parse(window.localStorage.getItem('myChars'));
+//console.log(currentCharacters);
+
+
+
 
 class SkillCards extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      currentCharacters : JSON.parse(window.localStorage.getItem('myChars'))
+
+    }
+  }
+  componentDidMount() {
+    this.setState({
+      currentCharacters : JSON.parse(window.localStorage.getItem('myChars'))
+  })}
+
   render() {
+    let character1 = JSON.parse(this.state.currentCharacters[0]);
+    //console.log(character1);
+    //console.log(character1.name);
+    //console.log(character1.gender);
+let character2 = JSON.parse(this.state.currentCharacters[1]);
     return (
       <div>
         <Card>
@@ -13,7 +36,7 @@ class SkillCards extends React.Component {
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>Card title</CardTitle>
+            <CardTitle>{character1.name}</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
             <CardText>
               Some quick example text to build on the card title and make up the
@@ -29,7 +52,7 @@ class SkillCards extends React.Component {
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>Card title</CardTitle>
+            <CardTitle>{character2.name}</CardTitle>
             <CardSubtitle>Card subtitle</CardSubtitle>
             <CardText>
               Some quick example text to build on the card title and make up the
