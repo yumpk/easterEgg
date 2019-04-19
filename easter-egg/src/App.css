@@ -60,6 +60,37 @@ h1 {
   padding: 0 3vw;
 }
 
+/*SkillCards*/
+.image-reducer {
+  max-height: 10em;
+  max-width: 10em;
+}
+.card-char {
+  border: 10px solid #ccc;
+  margin : 2px;
+  padding : 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  background-color: black;
+  
+}
+.container.card {
+ display: flex;
+ justify-content: center;
+ width: 70%;
+
+}
+ul{
+  list-style-type: none; 
+}
+
 .egg {
   position: absolute;
   bottom: -55vh;

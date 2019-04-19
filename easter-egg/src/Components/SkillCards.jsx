@@ -27,39 +27,39 @@ class SkillCards extends React.Component {
     //console.log(character1.gender);
 let character2 = JSON.parse(this.state.currentCharacters[1]);
     return (
-      <div>
-        <Card>
-          <CardImg
-            top
-            width="100%"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+      <div className="container-card row mx-3 my-3">
+        <div className="card-char" >
+          <img
+            src={character1.image}
             alt="Card image cap"
+            className="image-reducer"
           />
-          <CardBody>
-            <CardTitle>{character1.name}</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </CardText>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardImg
-            top
-            width="100%"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+          <div>
+            <h3>{character1.name}</h3>
+            
+            <ul>
+              <li>{`gender : ${character1.gender}`}</li>
+              <li>{`species : ${character1.species}`}</li>
+              <li>{`origin : ${character1.origin}`}</li>
+            </ul>
+          </div>
+        </div>
+        <div className="card-char" >
+          <img
+            src={character2.image}
             alt="Card image cap"
+            className="image-reducer"
           />
-          <CardBody>
-            <CardTitle>{character2.name}</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </CardText>
-          </CardBody>
-        </Card>
+          <div>
+            <h3>{character2.name}</h3>
+            
+            <ul>
+              <li>{`gender : ${character2.gender}`}</li>
+              <li>{`species : ${character2.species}`}</li>
+              <li>{`origin : ${character2.origin}`}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
