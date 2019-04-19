@@ -4,6 +4,7 @@ import "./App.css";
 import Homepage from "./Components/HomePage";
 import SkillCards from "./Components/SkillCards";
 import logo from "./Images/AdopteUnOeuf.png";
+import Logo2 from './Logo2';
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class App extends Component {
 
   render() {
     return (
+    
       <div className="App-header">
         <div className="App">
           <header className="header-app">
@@ -47,6 +49,7 @@ class App extends Component {
             <p className="banner">AdopteUnOeuf.com</p>
           </header>
           {this.renderSwitch(this.state.page)}
+          <Logo2 idKey={1}/>
         </div>
       </div>
     );

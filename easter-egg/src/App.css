@@ -59,3 +59,12 @@ h1 {
   margin: 4vh 0;
   padding: 0 3vw;
 }
+
+.egg {
+  position: absolute;
+  bottom: -55vh;
+  right: -3vh;
+  z-index: 10000;
+
+}
+
