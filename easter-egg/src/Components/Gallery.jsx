@@ -26,7 +26,7 @@ class Gallery extends React.Component {
   render() {
     return (
       <Container className="container">
-        <Row>
+        <Row className="justify-content-center">
           {this.state.characterList.map((character, i) => {
             return <Image key={i} character={character} />;
           })}

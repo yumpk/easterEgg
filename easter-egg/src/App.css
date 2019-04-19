@@ -59,8 +59,12 @@ h1 {
 .button {
   margin: 4vh 0;
   padding: 0 3vw;
+  transition: 0.2s;
 }
 
+.button:hover {
+  color: #fff;
+}
 /*SkillCards*/
 .image-reducer {
   max-height: 10em;
@@ -95,4 +99,32 @@ ul {
   bottom: -55vh;
   right: -3vh;
   z-index: 10000;
+}
+
+.text-color {
+  color: #fff;
+}
+
+.card-design {
+  margin: 2vh 0;
+  border: 4px solid white;
+  border-radius: 0;
+}
+
+.card-img {
+  height: 213px;
+  width: auto;
+}
+
+.card-design:hover {
+  cursor: pointer;
+}
+
+.bg {
+  background: #fff;
+  height: 80px;
+}
+
+.card-clicked {
+  border: 4px solid #7e67bd;
 }

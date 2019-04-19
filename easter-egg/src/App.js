@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Gallery from "./Components/Gallery";
 import "./App.css";
 import Homepage from "./Components/HomePage";
-import EggChoice from "./Components/EggChoice";
 import SkillCards from "./Components/SkillCards";
 import logo from "./Images/AdopteUnOeuf.png";
 import Logo2 from "./Logo2";

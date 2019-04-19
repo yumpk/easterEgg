@@ -2,8 +2,6 @@ import React from "react";
 import Snap from "snapsvg-cjs";
 import "./Logo2.css";
 
-
-
 class Logo2 extends React.Component {
   componentDidMount() {
     let s_oeuf = Snap("#svg" + this.props.idKey.toString()),
@@ -40,15 +38,15 @@ class Logo2 extends React.Component {
       strokeDashoffset: 250,
       strokeDasharray: 250
     });
-    let stop = 0,
-      start = 250;
+    // let stop = 0,
+    //   start = 250;
     function animate() {
-        document.querySelector("#svg1").style.animationPlayState = "paused";
-    //   Snap.animate(start, stop, function(value) {
-    //     line.attr({
-    //       "stroke-dashoffset": value
-    //     });
-    //   });
+      document.querySelector("#svg1").style.animationPlayState = "paused";
+      //   Snap.animate(start, stop, function(value) {
+      //     line.attr({
+      //       "stroke-dashoffset": value
+      //     });
+      //   });
     }
     function open() {
       line.attr({
@@ -89,40 +87,54 @@ class Logo2 extends React.Component {
     });
   }
   clickEgg() {
-      
-console.log("Bienvenue");
+    console.log("Bienvenue");
 
-let solution = Math.floor(Math.random() * 10) + 1;
+    let solution = Math.floor(Math.random() * 10) + 1;
 
-console.log("(La solution est " + solution + ")");
+    console.log("(La solution est " + solution + ")");
 
-let essais = 2;
+    let essais = 2;
 
-do {
-    let nmbre = prompt ("Pour le week-end de Pâques nous offrons la possibilité de recevoir un oeuf rien que pour vous gratuitement. Il suffit de choisir un chiffre entre 1 et 10... Es-tu pret pour avoir un bébé oeuf ? ");
-    essais --;
-    if(nmbre < solution){
-        alert(" la nombre secret est plus grand, il te reste" + essais + " essais");
-    } else if(nmbre > solution){
-        alert(" la nombre secret est plus petit, il te reste" + essais + " essais");
-    } else if(nmbre == solution ){
-        alert("tu as trouvée le nombre secret !! Félicitations un oeuf offert va être livré chez toi prochainement.") ;
-    }
-    
-        prompt("Tu as perdu.. Peut-être que la prochaine fois tu gagneras un oeuf, retante ta chance. Tu as trois jours pour adopter ton nouveau oeuf") ;
-    }
-    
- while(essais > 0);
+    do {
+      let nmbre = prompt(
+        "Pour le week-end de Pâques nous offrons la possibilité de recevoir un oeuf rien que pour vous gratuitement. Il suffit de choisir un chiffre entre 1 et 10... Es-tu pret pour avoir un bébé oeuf ? "
+      );
+      essais--;
+      if (nmbre < solution) {
+        alert(
+          " la nombre secret est plus grand, il te reste" + essais + " essais"
+        );
+      } else if (nmbre > solution) {
+        alert(
+          " la nombre secret est plus petit, il te reste" + essais + " essais"
+        );
+      } else if (nmbre === solution) {
+        alert(
+          "tu as trouvée le nombre secret !! Félicitations un oeuf offert va être livré chez toi prochainement."
+        );
+      }
 
+      prompt(
+        "Tu as perdu.. Peut-être que la prochaine fois tu gagneras un oeuf, retante ta chance. Tu as trois jours pour adopter ton nouveau oeuf"
+      );
+    } while (essais > 0);
 
-alert("la solution est " + solution);
+    alert("la solution est " + solution);
   }
   render() {
     const idKey = "svg" + this.props.idKey.toString();
-    return <svg onClick={()=>{this.clickEgg()}} width="200" height="200" id={idKey} className="egg" />;
+    return (
+      <svg
+        onClick={() => {
+          this.clickEgg();
+        }}
+        width="200"
+        height="200"
+        id={idKey}
+        className="egg"
+      />
+    );
   }
 }
-
-
 
 export default Logo2;
