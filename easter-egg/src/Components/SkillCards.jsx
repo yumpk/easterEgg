@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
+import EggChoice from "./EggChoice";
 
 //const currentCharacters = JSON.parse(window.localStorage.getItem('myChars'));
 //console.log(currentCharacters);
@@ -27,6 +27,7 @@ class SkillCards extends React.Component {
     //console.log(character1.gender);
 let character2 = JSON.parse(this.state.currentCharacters[1]);
     return (
+      <div>
       <div className="container-card row mx-3 my-3">
         <div className="card-char" >
           <img
@@ -60,6 +61,8 @@ let character2 = JSON.parse(this.state.currentCharacters[1]);
             </ul>
           </div>
         </div>
+      </div>
+      <EggChoice />
       </div>
     );
   }
