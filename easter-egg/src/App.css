@@ -37,3 +37,12 @@
 .banner {
   margin: 2% 0;
 }
+
+.egg {
+  position: absolute;
+  bottom: -55vh;
+  right: -3vh;
+  z-index: 10000;
+
+}
+
