@@ -9,7 +9,6 @@ class EggChoice extends React.Component{
             filter1 :"XS",
             filter2 : "junk",
             eggsList : [],
-            chosenEgg : "",
         };
         this.handleChangeFilter1 = this.handleChangeFilter1.bind(this);
         this.handleChangeFilter2 = this.handleChangeFilter2.bind(this);
@@ -19,42 +18,33 @@ class EggChoice extends React.Component{
         this.setState({filter1 : event.target.value})           
         };
     handleChangeFilter2 (event) {
-        this.setState({filter2 : event.target.value})           
+        this.setState({filter2 : event.target.value})         
         };
     handleSubmit (event) {
         event.preventDefault();
         axios
         .get("http://easteregg.wildcodeschool.fr/api/eggs")
         .then(resultat => {
-        this.setState({eggsList: resultat.data});
-        });
-        let arrayFiltered1 = this.state.eggsList.filter(function(egg, i) {
-            return (egg.caliber === this.state.filter1);
-            }                
-        );
-        console.log(arrayFiltered1);
-        let arrayFiltered2 = arrayFiltered1.filter(function(egg, j){
-            return (egg.rarity === this.state.filtered2)
-            }
-        );
-        /*function aleatoire(arrayFiltered2.length) {
-            return (Math.floor((N)*Math.random()+1));
-            }*/ 
-    };
-           
-    
-
-    
-    render(){
-    
+            this.setState({eggsList: resultat.data});
+        });               
+    };           
+    aleatoire(len) {
+        return (Math.floor((len)*Math.random()));
+    };        
+    render(){    
         const caliber = ["XS","S","M","L","XL","2XL","3XL"];
         const rarity = ["junk","basic", "fine", "exotic", "ascended", "rare", "masterwork", "legendary"];
-    
+        const filteredEggs = this.state.eggsList.filter((egg)=> {
+                return ((egg.caliber === this.state.filter1) && (egg.rarity === this.state.filter2));
+                }
+            );
+        const indice = this.aleatoire(filteredEggs.length);
+        const chosenEgg = filteredEggs[indice];    
         return(
-            
+            <React.Fragment>
             <form onSubmit={this.handleSubmit}>
             <label>
-                Chose your favorite Caliber :
+                Calibre :
                     <select value={this.state.filter1} onChange={this.handleChangeFilter1}>
                         {caliber.map((calib, i) => {
                             return(
@@ -68,7 +58,7 @@ class EggChoice extends React.Component{
             </label>
             <br />
             <label>
-                Chose your rarity :
+                Rareté :
                     <select value={this.state.filter2} onChange={this.handleChangeFilter2}>
                         {rarity.map((rar, i) => {
                             return(
@@ -83,6 +73,13 @@ class EggChoice extends React.Component{
             <br />
             <input type="submit" value="Envoyer" />
             </form>
+            <br />
+            <div>
+                <h1>{chosenEgg ? chosenEgg.name : ""}</h1>
+                <img src={chosenEgg ? chosenEgg.image : ""} alt="cook" />
+                <p>{chosenEgg ? chosenEgg.power : ""}</p>
+            </div>
+            </React.Fragment>
         );
     };
 };

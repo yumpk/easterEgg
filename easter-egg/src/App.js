@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Gallery from "./Components/Gallery";
 import "./App.css";
 import Homepage from "./Components/HomePage";
-import Eggchoice from "./Components/EggChoice";
+import EggChoice from "./Components/EggChoice";
 import AdopteUnOeuf from "./Images/AdopteUnOeuf.png";
 
 class App extends Component {
@@ -18,5 +18,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
