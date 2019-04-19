@@ -7,13 +7,16 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on: props.on
+      on: props.on,
+      count : 1
     };
   }
   handleClick = () => {
     this.setState({
-      on: !this.state.on
+      on: !this.state.on,
+      count : this.state.count + 1
     });
+    console.log(this.state.count);
   };
   storeSelected(e) {
     localStorage.setItem("charac", JSON.stringify(this.props.character));
@@ -23,9 +26,10 @@ class Image extends React.Component {
       selectChar.push(chars);
       console.log(selectChar);
       localStorage.setItem("myChars", JSON.stringify(selectChar));
-    } else {
-      // selectChar = [];
-      // selectChar.push(chars);
+    } else if (this.state.count === 3) {
+      alert('Nope, mind the cat !');
+      window.open('https://www.youtube.com/watch?v=16J7KiZmnJA','_blank');
+      
     }
   }
 
