@@ -31,7 +31,7 @@ class Gallery extends React.Component {
             return <Image key={i} character={character} />;
           })}
         </Row>
-        <button class="button" onClick={this.handleClick}>
+        <button className="button" onClick={this.handleClick}>
           Egg is coming!
         </button>
       </Container>
