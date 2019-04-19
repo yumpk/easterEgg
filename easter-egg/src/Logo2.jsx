@@ -4,11 +4,6 @@ import "./Logo2.css";
 
 
 
-
-
-
-
-
 class Logo2 extends React.Component {
   componentDidMount() {
     let s_oeuf = Snap("#svg" + this.props.idKey.toString()),

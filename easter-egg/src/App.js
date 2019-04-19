@@ -7,39 +7,50 @@ import logo from "./Images/AdopteUnOeuf.png";
 import Logo2 from './Logo2';
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      page : 'HomePage'
-    }
-
+      page: "Homepage"
+    };
   }
 
-  renderSwitch = (param) => {
+  changePage = () => {
+    this.setState({
+      page: "Gallery"
+    });
+  };
+
+  changetoPage2 = () => {
+    this.setState({
+      page: "SkillCards"
+    });
+  };
+
+  renderSwitch = param => {
     switch (param) {
-      case 'Homepage':
-      return <Homepage />;
-        break;
-      case 'Gallery':
-      return <Gallery />
-        break;
-      case 'SkillCards':
-      return <SkillCards />
-        break;
+      case "Homepage":
+        return <Homepage changePage={this.changePage} />;
+      case "Gallery":
+        return <Gallery changePage={this.changetoPage2} />;
+      case "SkillCards":
+        return <SkillCards page={this.state.page} />;
       default:
-        console.log('Sorry, we are out of ' + param + '.');
+        console.log("Sorry, we are out of " + param + ".");
     }
-  }
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="header-app">
-          <img src={logo} className="app-logo" alt="logo" />
-          <p className="banner">AdopteUnOeuf.com</p>
-        </header>
-       {this.renderSwitch(this.state.page)}
-        <Logo2 idKey={1}/>
-        <Gallery />
+    
+      <div className="App-header">
+        <div className="App">
+          <header className="header-app">
+            <img src={logo} className="app-logo" alt="logo" />
+            <p className="banner">AdopteUnOeuf.com</p>
+          </header>
+          {this.renderSwitch(this.state.page)}
+          <Logo2 idKey={1}/>
+        </div>
       </div>
     );
   }
