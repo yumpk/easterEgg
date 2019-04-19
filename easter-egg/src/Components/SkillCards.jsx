@@ -1,19 +1,31 @@
 import React from "react";
 import {Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText} from 'reactstrap';
 
-const currentCharacters = JSON.parse(window.localStorage.getItem('myChars'));;
+//const currentCharacters = JSON.parse(window.localStorage.getItem('myChars'));
 //console.log(currentCharacters);
 
 
 
 
 class SkillCards extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      currentCharacters : JSON.parse(window.localStorage.getItem('myChars'))
+
+    }
+  }
+  componentDidMount() {
+    this.setState({
+      currentCharacters : JSON.parse(window.localStorage.getItem('myChars'))
+  })}
+
   render() {
-    let character1 = JSON.parse(currentCharacters[0]);
+    let character1 = JSON.parse(this.state.currentCharacters[0]);
     //console.log(character1);
     //console.log(character1.name);
     //console.log(character1.gender);
-let character2 = JSON.parse(currentCharacters[1]);
+let character2 = JSON.parse(this.state.currentCharacters[1]);
     return (
       <div>
         <Card>
