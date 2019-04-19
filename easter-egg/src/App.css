@@ -90,3 +90,12 @@ h1 {
 ul{
   list-style-type: none; 
 }
+
+.egg {
+  position: absolute;
+  bottom: -55vh;
+  right: -3vh;
+  z-index: 10000;
+
+}
+
