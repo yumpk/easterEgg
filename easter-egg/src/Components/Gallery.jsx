@@ -19,6 +19,10 @@ class Gallery extends React.Component {
       });
   }
 
+  handleClick = () => {
+    this.props.changePage();
+  };
+
   render() {
     return (
       <Container className="container">
@@ -27,6 +31,9 @@ class Gallery extends React.Component {
             return <Image key={i} character={character} />;
           })}
         </Row>
+        <button class="button" onClick={this.handleClick}>
+          Egg is coming!
+        </button>
       </Container>
     );
   }
