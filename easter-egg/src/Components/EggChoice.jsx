@@ -44,7 +44,7 @@ class EggChoice extends React.Component{
             <React.Fragment>
             <form onSubmit={this.handleSubmit}>
             <label>
-                Calibre :
+                Select a Caliber :
                     <select value={this.state.filter1} onChange={this.handleChangeFilter1}>
                         {caliber.map((calib, i) => {
                             return(
@@ -58,7 +58,7 @@ class EggChoice extends React.Component{
             </label>
             <br />
             <label>
-                Rareté :
+                Select a Rarity :
                     <select value={this.state.filter2} onChange={this.handleChangeFilter2}>
                         {rarity.map((rar, i) => {
                             return(
