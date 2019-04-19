@@ -97,21 +97,21 @@ class Logo2 extends React.Component {
       
 console.log("Bienvenue");
 
-let solution = Math.floor(Math.random() * 15) + 1;
+let solution = Math.floor(Math.random() * 10) + 1;
 
 console.log("(La solution est " + solution + ")");
 
 let essais = 2;
 
 do {
-    let nmbre = prompt ("Pour le week-end de Pâques nous offrons la possibilité de recevoir un oeuf rien que pour vous gratuitement. Il suffit de choisir un chiffre entre 1 et 20... Es-tu pret pour avoir un bébé oeuf ? sentrez un nombre entre 1 et 20");
+    let nmbre = prompt ("Pour le week-end de Pâques nous offrons la possibilité de recevoir un oeuf rien que pour vous gratuitement. Il suffit de choisir un chiffre entre 1 et 10... Es-tu pret pour avoir un bébé oeuf ? ");
     essais --;
     if(nmbre < solution){
         alert(" la nombre secret est plus grand, il te reste" + essais + " essais");
     } else if(nmbre > solution){
         alert(" la nombre secret est plus petit, il te reste" + essais + " essais");
     } else if(nmbre == solution ){
-        alert("tu as trouvée le nombre secret !! Félicitations un oeuf offert va être livré chez toi prochainement." + "https://giphy.com/gifs/gudetama-qK0tMcGZm21by/fullscreen") ;
+        alert("tu as trouvée le nombre secret !! Félicitations un oeuf offert va être livré chez toi prochainement.") ;
     }
     
         prompt("Tu as perdu.. Peut-être que la prochaine fois tu gagneras un oeuf, retante ta chance. Tu as trois jours pour adopter ton nouveau oeuf") ;
