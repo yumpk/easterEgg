@@ -21,7 +21,7 @@ class Gallery extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className="container">
         <Row>
           {this.state.characterList.map((character, i) => {
             return <Image key={i} character={character} />;

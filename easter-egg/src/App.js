@@ -3,6 +3,7 @@ import Gallery from "./Components/Gallery";
 import "./App.css";
 import Homepage from "./Components/HomePage";
 import SkillCards from "./Components/SkillCards";
+import logo from "./Images/AdopteUnOeuf.png";
 
 class App extends Component {
   constructor(props){
@@ -31,10 +32,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <header className="header-app">
+        <img src={logo} className="app-logo" alt="logo" />
+        <p className="banner">AdopteUnOeuf.com</p>
+      </header>
        {this.renderSwitch(this.state.page)}
-
-       
       </div>
     );
   }
