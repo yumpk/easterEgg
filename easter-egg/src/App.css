@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Sniglet");
+
+* {
+  font-family: Sniglet, cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -72,14 +78,11 @@ h1 {
 }
 .card-char {
   border: 10px solid #ccc;
-  margin: 2px;
-  padding: 5px;
+  margin: 14vh 10vw;
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 5em -1em black;
-  height: 20em;
-  width: 15em;
-  font-size: 1.5em;
+  width: 17em;
   color: white;
   border-radius: 1em;
   padding: 1em;
@@ -90,8 +93,15 @@ h1 {
   justify-content: center;
   width: 70%;
 }
+
 ul {
   list-style-type: none;
+  padding: 5vh 6.3vh;
+  text-align: left;
+}
+
+ul li {
+  font-size: calc(0.5rem + 1vw);
 }
 
 .egg {
@@ -127,4 +137,25 @@ ul {
 
 .card-clicked {
   border: 4px solid #7e67bd;
+}
+
+select {
+  width: 15vw;
+  transform: translate(5rem);
+}
+
+.cards-name {
+  padding-top: 8vh;
+}
+
+.egg-pic-div {
+  margin: 10vh 0;
+}
+
+.egg-info {
+  margin: 3vh 0;
+}
+
+.submit {
+  margin: 5vh 0;
 }

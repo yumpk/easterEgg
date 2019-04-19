@@ -31,14 +31,15 @@ class SkillCards extends React.Component {
               src={character1.image}
               alt="Card cap"
               className="image-reducer"
+              height="200px"
             />
             <div>
-              <h3>{character1.name}</h3>
+              <h1 className="cards-name">{character1.name}</h1>
 
               <ul>
-                <li>{`gender : ${character1.gender}`}</li>
-                <li>{`species : ${character1.species}`}</li>
-                <li>{`origin : ${character1.origin}`}</li>
+                <li>{`Gender : ${character1.gender}`}</li>
+                <li>{`Species : ${character1.species}`}</li>
+                <li>{`Origin : ${character1.origin}`}</li>
               </ul>
             </div>
           </div>
@@ -49,12 +50,12 @@ class SkillCards extends React.Component {
               className="image-reducer"
             />
             <div>
-              <h3>{character2.name}</h3>
+              <h1 className="cards-name">{character2.name}</h1>
 
               <ul>
-                <li>{`gender : ${character2.gender}`}</li>
-                <li>{`species : ${character2.species}`}</li>
-                <li>{`origin : ${character2.origin}`}</li>
+                <li>{`Gender : ${character2.gender}`}</li>
+                <li>{`Species : ${character2.species}`}</li>
+                <li>{`Origin : ${character2.origin}`}</li>
               </ul>
             </div>
           </div>

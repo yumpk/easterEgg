@@ -45,7 +45,7 @@ class App extends Component {
         <div className="App">
           <header className="header-app">
             <img src={logo} className="app-logo" alt="logo" />
-            <p className="banner">AdopteUnOeuf.com</p>
+            <p className="banner">AdoptAnEgg.com</p>
           </header>
           {this.renderSwitch(this.state.page)}
           <Logo2 idKey={1} />

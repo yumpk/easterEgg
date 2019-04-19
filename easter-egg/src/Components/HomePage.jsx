@@ -17,7 +17,7 @@ class Homepage extends React.Component {
         />
         <h1>Find the perfect match and discover the perfect egg</h1>
         <button class="button" onClick={this.handleClick}>
-          Let's go!
+          Let's go !
         </button>
       </div>
     );

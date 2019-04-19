@@ -82,13 +82,13 @@ class EggChoice extends React.Component {
             </select>
           </label>
           <br />
-          <input type="submit" value="Envoyer" />
+          <input type="submit" value="Envoyer" className="submit" />
         </form>
         <br />
-        <div>
+        <div className="egg-pic-div">
           <h1>{chosenEgg ? chosenEgg.name : ""}</h1>
           <img src={chosenEgg ? chosenEgg.image : ""} alt="" />
-          <p>{chosenEgg ? chosenEgg.power : ""}</p>
+          <p className="egg-info">{chosenEgg ? chosenEgg.power : ""}</p>
         </div>
       </React.Fragment>
     );
