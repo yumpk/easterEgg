@@ -4,6 +4,26 @@
   font-family: Sniglet, cursive;
 }
 
+a {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 2rem;
+}
+
+a img {
+  transition: 0.5s;
+}
+
+a:hover img {
+  transform: translate(1rem);
+}
+
+.banner {
+  font-size: calc(1rem + 1.5vw);
+  margin: 2% 0;
+  color: #7e67bd;
+}
+
 .App {
   text-align: center;
 }
@@ -36,17 +56,11 @@
 }
 
 .app-logo {
-  height: 6vw;
+  height: 5vw;
   min-height: 10vh;
 }
 
-.banner {
-  margin: 2% 0;
-  color: #7e67bd;
-}
-
 p {
-  color: #fff;
   font-size: calc(1rem + 1vw);
 }
 
@@ -58,7 +72,10 @@ p {
   box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.9);
 }
 
-h1 {
+h1,
+p,
+.button:hover,
+.text-color {
   color: #fff;
 }
 
@@ -68,40 +85,42 @@ h1 {
   transition: 0.2s;
 }
 
-.button:hover {
-  color: #fff;
-}
 /*SkillCards*/
-.image-reducer {
-  max-height: 10em;
-  max-width: 10em;
-}
+
 .card-char {
-  border: 10px solid #ccc;
   margin: 14vh 10vw;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 5em -1em black;
   width: 17em;
   color: white;
-  border-radius: 1em;
   padding: 1em;
-  background-color: black;
-}
-.container.card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 70%;
+  align-items: center;
+}
+
+.card-char img {
+  border: 5px solid #7e67bd;
+  box-shadow: 0.5rem 0.5rem 1.5rem black;
+  border-radius: 1em;
+  height: 35vh;
 }
 
 ul {
   list-style-type: none;
-  padding: 5vh 6.3vh;
   text-align: left;
 }
 
 ul li {
-  font-size: calc(0.5rem + 1vw);
+  font-size: calc(0.5rem + 0.8vw);
+  font-family: sans-serif;
+}
+
+.separation {
+  height: 0.3rem;
+  width: 4rem;
+  border-radius: 3px;
+  background: #7e67bd;
+  margin: 2vh auto 6vh auto;
 }
 
 .egg {
@@ -111,14 +130,30 @@ ul li {
   z-index: 10000;
 }
 
-.text-color {
-  color: #fff;
-}
-
 .card-design {
   margin: 2vh 0;
   border: 4px solid white;
   border-radius: 0;
+}
+
+.card-clicked {
+  border: 4px solid #7e67bd;
+}
+
+.card-design:hover:after,
+.card-clicked:hover:after {
+  content: attr(title);
+  background: #463a69e5;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  color: white;
+  border-radius: 3px;
+  font-family: sans-serif;
 }
 
 .card-img {
@@ -132,11 +167,6 @@ ul li {
 
 .bg {
   background: #fff;
-  height: 80px;
-}
-
-.card-clicked {
-  border: 4px solid #7e67bd;
 }
 
 select {
